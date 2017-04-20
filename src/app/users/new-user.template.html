@@ -1,0 +1,74 @@
+<h2>Add a User</h2>
+<div class="row">
+    <div class="col-md-6 well">
+        <form [formGroup]="userForm" #f="ngForm">
+            <fieldset>
+                <legend>User</legend>
+            </fieldset>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control" formControlName="name" required>
+                <div *ngIf="userForm.controls.name.touched && userForm.controls.name.errors">
+                    <div *ngIf="userForm.controls.name.errors.required" class="alert alert-danger">
+                        Username is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="text" class="form-control" formControlName="email" name="email" required>
+                <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors">
+                    <div *ngIf="userForm.controls.email.errors.required" class="alert alert-danger">
+                        Email is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" class="form-control" formControlName="phone" name="phone" required>
+                <div *ngIf="userForm.controls.phone.touched && userForm.controls.phone.errors">
+                    <div *ngIf="userForm.controls.phone.errors.required" class="alert alert-danger">
+                        Phone is required.
+                    </div>
+                </div>
+            </div>
+            <div formGroupName="address">
+            <fieldset>
+                    <legend>Address</legend>
+            </fieldset>
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input id="street" type="text" class="form-control" formControlName="street" name="street" required>
+                <div *ngIf="userForm.controls.address.controls.street.touched && userForm.controls.address.controls.street.errors">
+                    <div *ngIf="userForm.controls.address.controls.street.errors.required" class="alert alert-danger">
+                        Street is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="suite">Suite</label>
+                <input id="suite" type="text" class="form-control" formControlName="suite" name="suite">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input id="city" type="text" class="form-control" formControlName="city" name="city" required>
+                <div *ngIf="userForm.controls.address.controls.city.touched && userForm.controls.address.controls.city.errors">
+                    <div *ngIf="userForm.controls.address.controls.city.errors.required" class="alert alert-danger">
+                        City is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">ZipCode</label>
+                <input id="zipcode" type="text" class="form-control" formControlName="zipcode" name="zipcode" required>
+                <div *ngIf="userForm.controls.address.controls.zipcode.touched && userForm.controls.address.controls.zipcode.errors">
+                    <div *ngIf="userForm.controls.address.controls.zipcode.errors.required" class="alert alert-danger">
+                        ZipCode is required.
+                    </div>
+                </div>
+            </div>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Save</button>
+        </form>
+    </div>
+</div>

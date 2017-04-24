@@ -9,6 +9,7 @@ import { NewUserComponent } from './users/new.user.component';
 import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { NavBarComponent } from './nav-bar/navbar.component';
+import { PreventUnsavedChangesGuard } from './users/prevent-unsaved-changes-guard.service';
 
 import {routing} from './app.routing';
 
@@ -28,7 +29,9 @@ import {routing} from './app.routing';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [
+    PreventUnsavedChangesGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,9 +11,14 @@ export class UsersService {
 
     constructor(private _http: Http){}
 
-
     getUsers() : Observable<any> {
         return this._http.get(this._url)
         .map(res => res.json());
-    } 
+    }
+
+    createUser(user) : Observable<any> {
+        console.log(user);
+        return this._http.post(this._url, JSON.stringify(user))
+        .map(res => res.json());
+    }
 }

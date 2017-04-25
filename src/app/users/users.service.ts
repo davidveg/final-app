@@ -33,4 +33,9 @@ export class UsersService {
         return this._http.put(this._url + user.id, JSON.stringify(user))
         .map(res => res.json());
     }
+
+    deleteUser(user : User) : Observable<User> {
+        return this._http.delete(this._url + user.id)
+        .map(res => res.json());
+    }
 }

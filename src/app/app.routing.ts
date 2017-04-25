@@ -10,7 +10,7 @@ export const routing = RouterModule.forRoot([
     { path: '' , component : HomeComponent},
     { path: 'posts' , component : PostsComponent},
     { path: 'users' , component : UsersComponent},
-     { path: 'users/:id' , component : UserComponent},
+    { path: 'users/:id' , component : UserComponent},
     { path: 'users/new', component : UserComponent, canDeactivate : [PreventUnsavedChangesGuard]},
     { path: '**' , component : HomeComponent}
 ]);

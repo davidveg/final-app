@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { NewUserComponent } from './users/new.user.component';
+import { UserComponent } from './users/user.component';
 import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { NavBarComponent } from './nav-bar/navbar.component';
@@ -17,7 +17,7 @@ import {routing} from './app.routing';
   declarations: [
     AppComponent,
     NavBarComponent,
-    NewUserComponent,
+    UserComponent,
     HomeComponent,
     PostsComponent,
     UsersComponent

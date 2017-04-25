@@ -1,7 +1,7 @@
-<h2>Add a User</h2>
+<h2>{{ title }}</h2>
 <div class="row">
     <div class="col-md-6 well">
-        <form [formGroup]="userForm" #f="ngForm" (ngSubmit)="save(f.value)" novalidate>
+        <form [formGroup]="userForm" #f="ngForm" (ngSubmit)="save()" novalidate>
             <fieldset>
                 <legend>User</legend>
             </fieldset>
@@ -18,9 +18,6 @@
                 <label for="email">Email</label>
                 <input id="email" type="text" class="form-control" formControlName="email" name="email" required>
                 <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors">
-                    <div *ngIf="userForm.controls.email.errors.required" class="alert alert-danger">
-                        Email is required.
-                    </div>
                     <div *ngIf="userForm.controls.email.errors.validateEmail" class="alert alert-danger">
                         Email is required and format should be <i>john@doe.com</i>.
                     </div>

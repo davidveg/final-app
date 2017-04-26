@@ -4,34 +4,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './users/user.component';
-import { PostsComponent } from './posts/posts.component';
-import { UsersComponent } from './users/users.component';
-import { NavBarComponent } from './nav-bar/navbar.component';
+import { HomeModule } from './home/home.module';
+import { PostsModule } from './posts/posts.module';
+import { UsersModule } from './users/users.module';
+import { SharedModule } from  './shared/shared.module';
+import { Router, RouterModule} from '@angular/router';
 import { PreventUnsavedChangesGuard } from './users/prevent-unsaved-changes-guard.service';
-import { SpinnerComponent } from './spinner/spinner.component';
-import { PaginationComponent } from './posts/pagination.component';
 
 import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    UserComponent,
-    HomeComponent,
-    PostsComponent,
-    UsersComponent,
-    SpinnerComponent,
-    PaginationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
+    HomeModule,
+    PostsModule,
+    UsersModule,
+    SharedModule
   ],
   providers: [
     PreventUnsavedChangesGuard

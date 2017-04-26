@@ -6,6 +6,8 @@ import {User} from '../users/user';
 import {UsersService} from '../users/users.service';
 import {PostsService} from './posts.service';
 import {SpinnerComponent} from '../spinner/spinner.component';
+import {PaginationComponent} from './pagination.component';
+import * as _ from 'underscore';
 
 @Component({
     selector: 'posts',
@@ -29,11 +31,13 @@ export class PostsComponent implements OnInit {
 
     users : User[] = [];
     posts : Post[] = [];
+    pagedPosts : Post[] = [];
     comments : Comment[];
     isLoadingPosts;
     isLoadingComments;
     showDetail = false;
     post : Post;
+    pageSize = 10;
 
     constructor(private _postService: PostsService, private _usersService: UsersService){
     }
@@ -55,6 +59,17 @@ export class PostsComponent implements OnInit {
             );
     }
 
+    filterPosts(filter) {
+        this.showDetail = false;
+        this.post = null;
+        this.loadPosts(filter);
+    }
+
+    onPageChanged(page) {
+        var startIndex = (page - 1) * this.pageSize;
+        this.pagedPosts = _.take(_.rest(this.posts, startIndex), this.pageSize);
+	}
+
     private loadUsers(){
         this._usersService.getUsers()
             .subscribe(
@@ -67,15 +82,11 @@ export class PostsComponent implements OnInit {
         this.isLoadingPosts = true;
         this._postService.getPosts(filter)
             .subscribe(
-                posts => this.posts = posts,
+                posts => {
+                    this.posts = posts;
+                    this.pagedPosts = _.take(this.posts,this.pageSize);
+                },
                 null,
                 () => { this.isLoadingPosts = false; });
     }
-
-    filterPosts(filter) {
-        this.showDetail = false;
-        this.post = null;
-        this.loadPosts(filter);
-    }
-
 }

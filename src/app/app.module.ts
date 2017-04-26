@@ -11,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { NavBarComponent } from './nav-bar/navbar.component';
 import { PreventUnsavedChangesGuard } from './users/prevent-unsaved-changes-guard.service';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { PaginationComponent } from './posts/pagination.component';
 
 import { routing } from './app.routing';
 
@@ -22,7 +23,8 @@ import { routing } from './app.routing';
     HomeComponent,
     PostsComponent,
     UsersComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

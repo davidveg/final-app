@@ -6,7 +6,7 @@ import { Router, RouterModule} from '@angular/router';
 
 import { PostsComponent } from './posts.component';
 import { PaginationComponent } from './pagination.component';
-
+import { PostsService } from './posts.service';
 import { SharedModule } from  '../shared/shared.module';
 
 @NgModule({
@@ -25,6 +25,9 @@ import { SharedModule } from  '../shared/shared.module';
      exports: [
          PostsComponent,
          PaginationComponent,
+     ],
+     providers : [
+         PostsService
      ]
 })
 export class PostsModule{}

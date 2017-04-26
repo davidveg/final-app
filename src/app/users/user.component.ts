@@ -16,7 +16,7 @@ import { User } from './user';
     `],
     providers : [UsersService]
 })
-export class UserComponent implements FormComponent, OnInit {
+export class UserComponent implements  FormComponent, OnInit {
 
     userForm : FormGroup;
     public user = new User();

@@ -5,7 +5,7 @@ import {Post} from './post';
 import {User} from '../users/user';
 import {UsersService} from '../users/users.service';
 import {PostsService} from './posts.service';
-import {SpinnerComponent} from '../spinner/spinner.component';
+import {SpinnerComponent} from '../shared/spinner/spinner.component';
 import {PaginationComponent} from './pagination.component';
 import * as _ from 'underscore';
 

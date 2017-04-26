@@ -6,6 +6,8 @@ import { Router, RouterModule} from '@angular/router';
 
 import { UsersComponent } from './users.component';
 import { UserComponent } from './user.component';
+import { UsersService } from './users.service';
+import { PreventUnsavedChangesGuard } from './prevent-unsaved-changes-guard.service';
 
 import { SharedModule } from  '../shared/shared.module';
 
@@ -25,6 +27,9 @@ import { SharedModule } from  '../shared/shared.module';
      exports : [
          UsersComponent,
          UserComponent,
+     ],
+     providers : [
+         PreventUnsavedChangesGuard, UsersService
      ]
 })
 export class UsersModule{}

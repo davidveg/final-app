@@ -4,6 +4,7 @@ import {FormGroup} from '@angular/forms';
 export interface FormComponent{
     hasUnsavedChanges() : Boolean;
 }
+
 export class PreventUnsavedChangesGuard implements CanDeactivate<FormComponent> {
 
     canDeactivate (component: FormComponent) {

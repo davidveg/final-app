@@ -10,8 +10,9 @@ import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { NavBarComponent } from './nav-bar/navbar.component';
 import { PreventUnsavedChangesGuard } from './users/prevent-unsaved-changes-guard.service';
+import { SpinnerComponent } from './spinner/spinner.component';
 
-import {routing} from './app.routing';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {routing} from './app.routing';
     UserComponent,
     HomeComponent,
     PostsComponent,
-    UsersComponent
+    UsersComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
